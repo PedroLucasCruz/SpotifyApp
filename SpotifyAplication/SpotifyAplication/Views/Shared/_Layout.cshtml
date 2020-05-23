@@ -1,49 +1,65 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Página Inicial", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        </div>*@
+
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Much longer nav link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+    </ul>
+
 
     <div class="container body-content">
         @RenderBody()
 
         @*<hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
-        </footer>*@
-        @RenderSection("MinhaSessao", required: true)
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+            </footer>*@
+        @RenderSection("MinhaSessao", required: false)
     </div>
-  
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
-    @*@RenderSection("scripts", required: false)*@
+    @RenderSection("scripts", required: false)
 </body>
 </html>
