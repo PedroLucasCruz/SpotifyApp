@@ -14,9 +14,17 @@ namespace SpotifyAplication
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               "Sessao1",
+               "sessao1",
+               new {Controller = "Home", Action = "sessao1" }
+                );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+
+
             );
         }
     }
